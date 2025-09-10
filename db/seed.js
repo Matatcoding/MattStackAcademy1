@@ -27,4 +27,7 @@ async function seedEmployees() {
     { name: "Macbeth", birthday: "1623-05-01", salary: 120000 },
     { name: "Codename Pelican", birthday: "2025-09-09", salary: 125000 },
   ];
+  for (const employee of employees) {
+    await createEmployee(employee);
+  }
 }
