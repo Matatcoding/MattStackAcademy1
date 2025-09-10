@@ -1,14 +1,21 @@
+import db from "#db/client";
+
 /** @returns the employee created according to the provided details */
 export async function createEmployee({ name, birthday, salary }) {
-  // TODO
+  const SQL = `
+  INSERT INTO employees (name, birthday, salary)
+  VALUES($1, $2, $3) RETURNING *
+  `;
+  const {
+    rows: [employees],
+  } = await db.query(SQL, [name, birthday, salary]);
+  return employees;
 }
 
 // === Part 2 ===
 
 /** @returns all employees */
-export async function getEmployees() {
-  // TODO
-}
+export async function getEmployees() {}
 
 /**
  * @returns the employee with the given id
