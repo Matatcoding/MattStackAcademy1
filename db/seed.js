@@ -1,5 +1,5 @@
 import db from "#db/client";
-import { createEmployee } from "./queries/employees";
+import { createEmployee } from "./queries/employees.js";
 
 await db.connect();
 await seedEmployees();
@@ -16,7 +16,7 @@ async function seedEmployees() {
       salary: 60001,
     },
     {
-      name: "John Jacob Jingleheimer Schmidt",
+      name: "Jon Jacob Jingleheimer Schmidt",
       birthday: "1990-05-10",
       salary: 60002,
     },
